@@ -1,0 +1,20 @@
+{
+  "name": "trowl",
+  "version": "0.0.1",
+  "description": "An ultra-lightweight, standalone, masonry-style grid library",
+  "main": "index.js",
+  "scripts": {
+    "minify": "uglifyjs index.js",
+    "test": "mocha"
+  },
+  "keywords": [
+    "css",
+    "grid",
+    "masonry"
+  ],
+  "author": "krazyjakee",
+  "license": "MIT",
+  "devDependencies": {
+    "uglifyjs": "^2.4.11"
+  }
+}

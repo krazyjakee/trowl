@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="style.css" />
+<div id="grid">
+    <div class="box box-1"></div>
+</div>
+<script src="index.js"></script>
+<script>
+    window.onload = () => {
+        const grid = document.getElementById('grid');
+
+        let html = "";
+        for (let i = 0; i < 25; i += 1) {
+            const height = Math.floor(Math.random() * 4) + 1
+            html += `<div class='box box-${height}'>${i}</div>`;
+        }
+        grid.innerHTML = html;
+
+        gridHustle(grid, 5, 5, () => {
+            grid.style.opacity = 1;
+        });
+    };
+</script>
