@@ -1,23 +1,19 @@
 <!doctype html>
 <html>
-
-        let html = "";
-        for (let i = 0; i < 25; i += 1) {
-            const height = Math.floor(Math.random() * 4) + 1
-            html += `<div class='box box-${height}'>${i}</div>`;
-        }
-        grid.innerHTML = html;
-
+    <head>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
         <div style="float:right;">
             <a class="github-button" href="https://github.com/krazyjakee/trowl" data-size="large" data-show-count="true" aria-label="Star krazyjakee/trowl on GitHub">Star</a>
         </div>
         <h1>Trowl</h1>
-        <h2>A masonry-like library in 1kb</h2>
+        <h2>A masonry-like library in 1.2kb</h2>
         <div id="grid">
-            <div class="box box-1"></div>
+            
         </div>
         <script src="demo.min.js"></script>
-        <script>
+        <script type="text/javascript">
             window.onload = () => {
                 const grid = document.getElementById('grid');
 
