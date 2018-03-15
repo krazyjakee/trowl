@@ -1,12 +1,17 @@
 {
   "scripts": {
-    "build": "uglifyjs demo.dist.js -o demo.min.js -c -m"
+    "build": "npm run babel && npm run browserify",
+    "babel": "babel demo.js -o demo.es6.js --no-comments",
+    "browserify": "browserify demo.es6.js -o demo.min.js -t [ babelify --global --presets [ @babel/preset-env ] ]"
+  },
+  "dependencies": {
+    "trowl": "0.0.2"
   },
   "devDependencies": {
-    "pre-commit": "^1.2.2",
-    "uglify-js": "^3.3.15"
-  },
-  "pre-commit": [
-    "build"
-  ]
+    "@babel/cli": "^7.0.0-beta.41",
+    "@babel/core": "^7.0.0-beta.41",
+    "@babel/preset-env": "^7.0.0-beta.41",
+    "babelify": "^8.0.0",
+    "browserify": "^16.1.1"
+  }
 }
