@@ -1,6 +1,6 @@
 {
   "name": "trowl",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An ultra-lightweight, standalone, masonry-style grid library",
   "main": "index.js",
   "scripts": {
@@ -8,9 +8,9 @@
     "babel": "babel index.js -o index.es6.js && babel example/demo.js -o example/demo.es6.js --no-comments",
     "browserify": "browserify index.es6.js -o index.dist.js -t [ babelify --global --presets [ @babel/preset-env ] ]",
     "browserifyDemo": "browserify example/demo.es6.js -o example/demo.dist.js -t [ babelify --global --presets [ @babel/preset-env ] ]",
-    "uglify": "uglifyjs index.dist.js -o index.min.js -c -m && npm run browserifyDemo && npm run uglifyDemo",
-    "uglifyDemo": "uglifyjs example/demo.dist.js -o example/demo.min.js -c -m",
-    "cleanup": "rm index.es6.js && rm index.dist.js && rm example/demo.es6.js && rm example/demo.dist.js",
+    "uglify": "uglifyjs index.dist.js -o index.min.js -c -m && npm run browserifyDemo",
+    "cleanup": "rm index.es6.js && rm index.dist.js && rm example/demo.es6.js",
+    "watch": "nodemon --watch index.js --exec 'npm run build'",
     "test": "mocha"
   },
   "keywords": [
@@ -25,6 +25,8 @@
     "@babel/core": "^7.0.0-beta.41",
     "@babel/preset-env": "^7.0.0-beta.41",
     "babelify": "github:ylemkimon/babelify",
+    "browserify": "^16.1.1",
+    "nodemon": "^1.17.2",
     "uglify-js": "^3.3.15"
   }
 }

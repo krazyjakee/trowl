@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div id="grid">
+            <div class="box box-1">0</div>
+            <div class="box box-3">1</div>
+            <div class="box box-2">2</div>
+            <div class="box box-2">3</div>
+            <div class="box box-2">4</div>
+            <div class="box box-4">5</div>
+            <div class="box box-1">6</div>
+            <div class="box box-4">7</div>
+            <div class="box box-1">8</div>
+            <div class="box box-2">9</div>
+            <div class="box box-1">10</div>
+            <div class="box box-3">11</div>
+            <div class="box box-4">12</div>
+            <div class="box box-2">13</div>
+            <div class="box box-3">14</div>
+            <div class="box box-2">15</div>
+            <div class="box box-3">16</div>
+            <div class="box box-4">17</div>
+            <div class="box box-1">18</div>
+            <div class="box box-1">19</div>
+            <div class="box box-2">20</div>
+            <div class="box box-4">21</div>
+            <div class="box box-1">22</div>
+            <div class="box box-1">23</div>
+            <div class="box box-2">24</div>
+        </div>
+        <script src="demo.dist.js"></script>
+        <script>
+            window.onload = () => {
+                const grid = document.getElementById('grid');
+
+                window.trowl(grid, 5, 5, () => {
+                    grid.style.opacity = 1;
+                });
+            };
+        </script>
+    </body>
+</html>

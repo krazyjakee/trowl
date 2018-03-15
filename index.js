@@ -47,7 +47,7 @@ export default (gridContainer, columns, gap, callback) => {
             const rect = elem.getBoundingClientRect();
             lowPoints[i] = {
                 elem,
-                column: Math.abs(elem.style.gridArea.replace(/\/ /g, '').split(' ')[1]) - 1,
+                column: Math.abs(elem.style.gridArea.trim().replace(/([\s\/]+)/g, '-').split('-')[1]) - 1,
                 lowPoint: rect.top + rect.height,
                 rect,
             }
@@ -63,6 +63,7 @@ export default (gridContainer, columns, gap, callback) => {
             }
         }
         lowestPerColumn.sort((a, b) => a[1] - b[1]);
+
         const highest = lowestPerColumn[0][0];
         
         // Move the lowest to the highest column and nudge
@@ -73,6 +74,7 @@ export default (gridContainer, columns, gap, callback) => {
                     gridContainer.style.height = `${lowest.lowPoint - gridContainerTop}px`;
                     if (callback){
                         callback();
+                        return;
                     }
                 }
             } else {
