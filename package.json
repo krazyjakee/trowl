@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "build": "uglifyjs demo.dist.js -o demo.min.js -c -m"
+  },
+  "devDependencies": {
+    "pre-commit": "^1.2.2",
+    "uglify-js": "^3.3.15"
+  },
+  "pre-commit": [
+    "build"
+  ]
+}
