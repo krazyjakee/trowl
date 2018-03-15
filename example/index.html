@@ -2,7 +2,7 @@
 <div id="grid">
     <div class="box box-1"></div>
 </div>
-<script src="index.js"></script>
+<script src="demo.min.js"></script>
 <script>
     window.onload = () => {
         const grid = document.getElementById('grid');
@@ -14,7 +14,7 @@
         }
         grid.innerHTML = html;
 
-        gridHustle(grid, 5, 5, () => {
+        window.trowl(grid, 5, 5, () => {
             grid.style.opacity = 1;
         });
     };

@@ -4,7 +4,13 @@
   "description": "An ultra-lightweight, standalone, masonry-style grid library",
   "main": "index.js",
   "scripts": {
-    "minify": "uglifyjs index.js",
+    "build": "npm run babel && npm run browserify && npm run uglify && npm run cleanup",
+    "babel": "babel index.js -o index.es6.js && babel example/demo.js -o example/demo.es6.js --no-comments",
+    "browserify": "browserify index.es6.js -o index.dist.js -t [ babelify --global --presets [ @babel/preset-env ] ]",
+    "browserifyDemo": "browserify example/demo.es6.js -o example/demo.dist.js -t [ babelify --global --presets [ @babel/preset-env ] ]",
+    "uglify": "uglifyjs index.dist.js -o index.min.js -c -m && npm run browserifyDemo && npm run uglifyDemo",
+    "uglifyDemo": "uglifyjs example/demo.dist.js -o example/demo.min.js -c -m",
+    "cleanup": "rm index.es6.js && rm index.dist.js && rm example/demo.es6.js && rm example/demo.dist.js",
     "test": "mocha"
   },
   "keywords": [
@@ -15,6 +21,10 @@
   "author": "krazyjakee",
   "license": "MIT",
   "devDependencies": {
-    "uglifyjs": "^2.4.11"
+    "@babel/cli": "^7.0.0-beta.41",
+    "@babel/core": "^7.0.0-beta.41",
+    "@babel/preset-env": "^7.0.0-beta.41",
+    "babelify": "github:ylemkimon/babelify",
+    "uglify-js": "^3.3.15"
   }
 }
