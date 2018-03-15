@@ -6,6 +6,10 @@ Masonry-style grid library.
 - Uses [CSS Grid](https://caniuse.com/#search=css%20grid)
 - Zero dependencies
 
+### Demo
+
+See it in action here: https://krazyjakee.github.io/trowl
+
 ### Installation
 
 `npm install trowl`
@@ -35,4 +39,4 @@ trowl(document.getElementById('grid'), numberOfColumns, gapSize, callback);
 
 ### Tip
 
-I would make the grid `opacity: 0` and use the callback to make it `1` with a low transition time (0.2s). There is a small chance that for a few microseconds, the interface shuffles about as it adjusts items.
+I would make the grid `opacity: 0` and use the callback to make it `1` with a low transition time (0.2s). There is a small chance that for a few milliseconds, the interface shuffles about as it measures and adjusts items.
